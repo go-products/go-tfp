@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "declaration": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "pretty": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./src"
+  },
+  "include": [
+    "typings/*",
+    "src/core/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+    "typings/lib.d.ts"
+  ]
+}
