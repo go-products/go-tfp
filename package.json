@@ -7,6 +7,8 @@
   "author": "gabrusevs <gabrusevs@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "install": "cd frontend && yarn",
+    "start": "cd frontend && yarn start",
     "client": "cd frontend && yarn start"
   }
 }
