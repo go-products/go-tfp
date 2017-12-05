@@ -1,0 +1,12 @@
+{
+  "name": "go-tfp",
+  "version": "1.0.0",
+  "description": "go-tfp project",
+  "main": "index.js",
+  "repository": "git@github.com:go-products/go-tfp.git",
+  "author": "gabrusevs <gabrusevs@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "client": "cd frontend && yarn start"
+  }
+}
