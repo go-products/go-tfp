@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFP.WebAPI", "TFP.WebAPI\TFP.WebAPI.csproj", "{101F3404-CA57-44B6-AAA6-327899B78A8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFP.WebAPI", "TFP.WebAPI\TFP.WebAPI.csproj", "{101F3404-CA57-44B6-AAA6-327899B78A8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFP.Domain", "TFP.Domain\TFP.Domain.csproj", "{3D8064BC-6887-4F47-8BC5-8BDDCA4BFA8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFP.Models", "TFP.Models\TFP.Models.csproj", "{2DB2580C-D95E-414D-9261-21828EC5EA99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFP.Persistence", "TFP.Persistence\TFP.Persistence.csproj", "{CA3DE6C0-79FC-445A-95DC-C7F664948786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFP.Portable", "TFP.Portable\TFP.Portable.csproj", "{F527E56A-A33D-4781-8335-7CCE2B065B57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFP.Core", "TFP.Core\TFP.Core.csproj", "{5A09AF25-0D2D-412F-BE9C-9FC200B816C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{101F3404-CA57-44B6-AAA6-327899B78A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{101F3404-CA57-44B6-AAA6-327899B78A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{101F3404-CA57-44B6-AAA6-327899B78A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D8064BC-6887-4F47-8BC5-8BDDCA4BFA8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8064BC-6887-4F47-8BC5-8BDDCA4BFA8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8064BC-6887-4F47-8BC5-8BDDCA4BFA8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8064BC-6887-4F47-8BC5-8BDDCA4BFA8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB2580C-D95E-414D-9261-21828EC5EA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB2580C-D95E-414D-9261-21828EC5EA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB2580C-D95E-414D-9261-21828EC5EA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB2580C-D95E-414D-9261-21828EC5EA99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA3DE6C0-79FC-445A-95DC-C7F664948786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3DE6C0-79FC-445A-95DC-C7F664948786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3DE6C0-79FC-445A-95DC-C7F664948786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3DE6C0-79FC-445A-95DC-C7F664948786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F527E56A-A33D-4781-8335-7CCE2B065B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F527E56A-A33D-4781-8335-7CCE2B065B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F527E56A-A33D-4781-8335-7CCE2B065B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F527E56A-A33D-4781-8335-7CCE2B065B57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A09AF25-0D2D-412F-BE9C-9FC200B816C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A09AF25-0D2D-412F-BE9C-9FC200B816C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A09AF25-0D2D-412F-BE9C-9FC200B816C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A09AF25-0D2D-412F-BE9C-9FC200B816C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
