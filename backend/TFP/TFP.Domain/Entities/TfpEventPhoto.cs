@@ -2,12 +2,12 @@
 
 namespace TFP.Domain.Entities
 {
-    public class AlbumPhoto
+    public class TfpEventPhoto
     {
-        public Guid AlbumId { get; set; }
+        public Guid TfpEventId { get; set; }
         public Guid PhotoId { get; set; }
 
-        public Album Album { get; set; }
         public Photo Photo { get; set; }
+        public TfpEvent TfpEvent { get; set; }
     }
 }
