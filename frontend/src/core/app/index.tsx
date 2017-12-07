@@ -4,29 +4,26 @@ import 'tslib'
 import { AppRouter } from 'core/router'
 import { UserStore } from 'core/user'
 
-interface Props {
-
-}
+interface Props {}
 
 export class App extends Component<Props, {}> {
-    private stores: {
-        user: UserStore
-    }
+  private stores: {
+    user: UserStore
+  }
 
-    constructor(props: Props) {
-        super(props)
+  constructor(props: Props) {
+    super(props)
 
-        const user = new UserStore()
+    const user = new UserStore()
 
-        this.stores = { user }
-    }
+    this.stores = { user }
+  }
 
-    render() {
-        return (
-            <Provider {...this.stores}>
-                <AppRouter />
-            </Provider>
-
-        )
-    }
+  render() {
+    return (
+      <Provider {...this.stores}>
+        <AppRouter />
+      </Provider>
+    )
+  }
 }

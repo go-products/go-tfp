@@ -4,5 +4,4 @@ import { IRegistration } from 'components/registration'
 
 const server = 'http://localhost:8080/api/'
 
-export class UserStore {
-}
+export class UserStore {}
