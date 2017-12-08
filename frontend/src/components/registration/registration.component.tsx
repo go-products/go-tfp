@@ -49,14 +49,16 @@ export class Registration extends Component<Props, {}> {
     const { name, email, username, password } = this.data
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        {this.error}
-        <Input label="Имя" field={name} />
-        <Input label="E-mail" field={email} />
-        <Input label="Логин" field={username} />
-        <Input label="Пароль" type="password" field={password} />
-        <button type="submit">Submit</button>
-      </form>
+      <div className="block">
+        <form onSubmit={this.handleSubmit}>
+          {this.error}
+          <Input label="Имя" field={name} />
+          <Input label="E-mail" field={email} />
+          <Input label="Логин" field={username} />
+          <Input label="Пароль" type="password" field={password} />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     )
   }
 }

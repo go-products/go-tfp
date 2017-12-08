@@ -4,6 +4,8 @@ import 'tslib'
 import { AppRouter } from 'core/router'
 import { UserStore } from 'core/user'
 
+import 'assets/styles/style.less'
+
 interface Props {}
 
 export class App extends Component<Props, {}> {
