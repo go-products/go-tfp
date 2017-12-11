@@ -21,7 +21,6 @@ namespace TFP.Domain.Entities
         public DateTime ModifiedOn { get; set; }
         public Guid ModifiedId { get; set; }
         
-
         public Individual Individual { get; set; }
         public Individual Modified { get; set; }
         public Photo Photo { get; set; }

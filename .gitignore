@@ -1,3 +1,5 @@
 yarn-error.log
 node_modules/
 backend/TFP/.vs/TFP/v15/Server/sqlite3/storage.ide-shm
+backend/TFP/.vs/TFP/v15/Server/sqlite3/storage.ide-wal
+backend/TFP/.vs/TFP/v15/Server/sqlite3/storage.ide

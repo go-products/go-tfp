@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TFP.Domain.Entities
 {
@@ -9,7 +10,7 @@ namespace TFP.Domain.Entities
             Permission = new HashSet<Permission>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public int Order { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
