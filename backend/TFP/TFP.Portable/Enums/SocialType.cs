@@ -1,6 +1,6 @@
 ﻿namespace TFP.Portable.Enums
 {
-    public class SocialType
+    public enum SocialType
     {
     }
 }

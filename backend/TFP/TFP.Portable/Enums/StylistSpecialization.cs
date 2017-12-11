@@ -1,6 +1,6 @@
 ﻿namespace TFP.Portable.Enums
 {
-    public class StylistSpecialization
+    public enum StylistSpecialization
     {
     }
 }
