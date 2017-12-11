@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using TFP.Domain.Entities;
 
 namespace TFP.Persistence.Context
 {
-    public class TfpContext : DbContext
+    public class TfpContext : IdentityDbContext<User, Role, Guid>
     {
         public virtual DbSet<Album> Album { get; set; }
         public virtual DbSet<AlbumPhoto> AlbumPhoto { get; set; }
@@ -42,6 +44,7 @@ namespace TFP.Persistence.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Album>(entity =>
             {
                 entity.ToTable("Album", "Catalog");
@@ -662,10 +665,6 @@ namespace TFP.Persistence.Context
             {
                 entity.ToTable("User", "Membership");
 
-                entity.HasIndex(e => e.Login)
-                    .HasName("UK_Membership_User_Login")
-                    .IsUnique();
-
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Comment).HasMaxLength(512);
@@ -675,10 +674,6 @@ namespace TFP.Persistence.Context
                     .HasMaxLength(128);
 
                 entity.Property(e => e.PasswordHash)
-                    .IsRequired()
-                    .HasMaxLength(128);
-
-                entity.Property(e => e.PasswordSalt)
                     .IsRequired()
                     .HasMaxLength(128);
 
