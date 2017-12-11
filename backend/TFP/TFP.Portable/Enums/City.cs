@@ -1,4 +1,4 @@
-namespace Colibri.Domain.Lookup
+namespace TFP.Portable.Enums
 {
     public class City
     {
