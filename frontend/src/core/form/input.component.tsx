@@ -12,7 +12,7 @@ export class Input extends Component<Props, {}> {
     const { field, label, type } = this.props
 
     return (
-      <div>
+      <div className="field">
         <label>{label}</label>
         <input
           type={type || 'text'}

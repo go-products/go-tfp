@@ -50,14 +50,23 @@ export class Registration extends Component<Props, {}> {
 
     return (
       <div className="block">
-        <form onSubmit={this.handleSubmit}>
-          {this.error}
-          <Input label="Имя" field={name} />
-          <Input label="E-mail" field={email} />
-          <Input label="Логин" field={username} />
-          <Input label="Пароль" type="password" field={password} />
-          <button type="submit">Submit</button>
-        </form>
+        <div className="reg__wrapper">
+          <form className="reg__form" onSubmit={this.handleSubmit}>
+            {this.error}
+            <Input label="Имя" field={name} />
+            <Input label="E-mail" field={email} />
+            <Input label="Логин" field={username} />
+            <Input label="Пароль" type="password" field={password} />
+            <div className="field">
+              <label />
+              <button className="btn btn_accent mw_fl" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+
+          <div className="reg__info">Some Info</div>
+        </div>
       </div>
     )
   }

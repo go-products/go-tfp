@@ -1,11 +1,19 @@
 @import "reset";
 @import "vars";
 
+// Fonts
+
+// @import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,600,800&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&subset=cyrillic');
+
 // Common styles
 
 body {        
     font-size: 14px;
     background-color: #faf5f5;
+    font-family: @font_family; 
+    font-size: 13px;
+    font-weight: 400;
 }
 
 a {
@@ -13,16 +21,83 @@ a {
     text-decoration: none;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+input {
+    border-radius: 2px;
+    padding: 7px 10px;
+    flex: 1;
+    border: 1px solid @color_border;
+    .transition;
+    font-family: @font_family;
+    &:focus {
+        border-color: @color_text_dark;
+        .box-shadow;
+    }
+}
+
+.field {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    label {
+        width: 120px;
+        margin-right: 15px;
+        text-align: right;
+        display: block;
+    }
+}
+
+.btn {
+    display: block;
+    border-radius: @border_radius;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid @color_main;
+    background-color: rgb(250, 250, 250);
+    font-family: @font_family;
+    color: @color_main;
+    .box-shadow();
+    .transition();
+    &:hover {
+        background-color: #fff;
+    }
+    &:active {
+        background-color: rgb(230, 230, 230);
+        box-shadow: none;
+    }
+    &.btn_accent {
+        background-color: @color_main;
+        color: #fff;
+        &:hover {
+            background-color: @color_main_light;
+        }
+        &:active {
+            background-color: @color_main_dark;
+        }
+    }
+}
+
 // Layout styles
 
 [class^="layout__"], [class*=" layout__"] {
     margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: @layout_margin;
     position: relative;
     display: flex;
     flex-direction: column;
     &.horizontal {
         flex-direction: row;
+        .block:last-child {
+            margin-bottom: @layout_margin;
+            margin-right: 0;
+        }
+    }
+    .block:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -39,13 +114,16 @@ a {
     border-radius: @border_radius;
     background-color: @color_bg_light;
     width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    margin-right: 15px;
+    padding: @layout_margin;
+    margin-bottom: @layout_margin;
+    margin-right: @layout_margin;
     &:last-child {
-        margin-bottom: 0;
         margin-right: 0;
     }
+}
+
+.mw_fl {
+    flex: 1;
 }
 
 // Header styles
@@ -76,3 +154,25 @@ a {
         }
     }
 }
+
+// Registration 
+
+.reg__wrapper {
+    display: flex;
+    .reg__form {
+        flex: 1;
+    }
+    .reg__info {
+        flex: 1;
+        margin-left: 15px;
+    }
+}
+
+// Adaptive 
+
+@media screen and (max-width: 1620px) {
+    .layout__container {
+        width: 100%;
+        padding: 0 @layout_margin;
+    }
+} 
