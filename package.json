@@ -8,9 +8,11 @@
   "license": "MIT",
   "scripts": {
     "install": "cd frontend && yarn install",
-    "start": "parallelshell \"cd backend/TFP && dotnet build && cd TFP.WebAPI && dotnet run\" \"cd frontend && yarn start\"",
+    "start":
+      "parallelshell \"cd backend/TFP && dotnet build && cd TFP.WebAPI && dotnet run\" \"cd frontend && yarn start\"",
     "client": "cd frontend && yarn start",
-    "server": "cd backend/TFP && dotnet build && cd TFP.WebAPI && dotnet run"
+    "server":
+      "cd backend/TFP && dotnet restore && cd TFP.WebAPI && dotnet ef database update && dotnet run"
   },
   "devDependencies": {
     "parallelshell": "^3.0.2"
