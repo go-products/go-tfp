@@ -7,7 +7,6 @@
   <ItemGroup>
     <Folder Include="Automapper\" />
     <Folder Include="DataServices\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TFP.Domain\TFP.Domain.csproj" />
+    <ProjectReference Include="..\TFP.Models\TFP.Models.csproj" />
     <ProjectReference Include="..\TFP.Persistence\TFP.Persistence.csproj" />
   </ItemGroup>
 

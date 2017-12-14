@@ -23,6 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TFP.Core\TFP.Core.csproj" />
+    <ProjectReference Include="..\TFP.Models\TFP.Models.csproj" />
     <ProjectReference Include="..\TFP.Persistence\TFP.Persistence.csproj" />
   </ItemGroup>
 

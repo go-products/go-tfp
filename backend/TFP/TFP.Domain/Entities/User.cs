@@ -11,6 +11,8 @@ namespace TFP.Domain.Entities
             UserPermission = new HashSet<UserPermission>();
         }
 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Login { get; set; }
         public int? InitialPermissionSetId { get; set; }
         public bool IsDeleted { get; set; }
