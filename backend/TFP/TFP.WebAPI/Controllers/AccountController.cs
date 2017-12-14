@@ -1,44 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
-using TFP.Domain.Entities;
+using TFP.Core.Services;
 using TFP.Models.ViewModels.AuthorizationModel;
-using TFP.Core.Interfaces.ControllerInterfaces;
 
 namespace TFP.WebAPI.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/Account")]
+    [Route("api/[controller]/[action]")]
     public class AccountController : Controller
     {
-        private readonly IAccountControllerService accountService;
+        private readonly IAccountService accountService;
 
-        public AccountController(IAccountControllerService accountService)
+        public AccountController(IAccountService accountService)
         {
             this.accountService = accountService;
         }
 
+        [HttpPost]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
             var res = await accountService.Register(model);
             if (res.Succeeded)
             {
                 return Ok();
             }
-
             return BadRequest();
-               
         }
-        
-
     }
 }

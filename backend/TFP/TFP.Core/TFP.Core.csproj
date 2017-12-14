@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Automapper\" />
-    <Folder Include="DataServices\" />
+    <Compile Remove="Automapper\**" />
+    <Compile Remove="DataServices\**" />
+    <EmbeddedResource Remove="Automapper\**" />
+    <EmbeddedResource Remove="DataServices\**" />
+    <None Remove="Automapper\**" />
+    <None Remove="DataServices\**" />
   </ItemGroup>
 
   <ItemGroup>

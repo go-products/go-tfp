@@ -3,3 +3,7 @@ node_modules/
 backend/TFP/.vs/TFP/v15/Server/sqlite3/storage.ide-shm
 backend/TFP/.vs/TFP/v15/Server/sqlite3/storage.ide-wal
 backend/TFP/.vs/TFP/v15/Server/sqlite3/storage.ide
+backend/TFP/.vs/TFP/v15/sqlite3/db.lock
+backend/TFP/.vs/TFP/v15/sqlite3/storage.ide-wal
+backend/TFP/.vs/TFP/v15/sqlite3/storage.ide-shm
+backend/TFP/.vs/TFP/v15/sqlite3/storage.ide

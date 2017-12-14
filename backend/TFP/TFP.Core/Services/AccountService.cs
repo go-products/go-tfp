@@ -1,22 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using TFP.Core.Interfaces.ControllerInterfaces;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using TFP.Core.UnitOfWork;
 using TFP.Domain.Entities;
-using System.Threading.Tasks;
 using TFP.Models.ViewModels.AuthorizationModel;
 
-namespace TFP.Core.Services.ControllerServices
+namespace TFP.Core.Services
 {
-   public class AccountControllerService : IAccountControllerService
+    public class AccountService : IAccountService
     {
         private readonly UserManager<User> userManager;
         private readonly IUnitOfWork unitOfWork;
 
-
-        public AccountControllerService(UserManager<User> userManager, IUnitOfWork unitOfWork)
+        public AccountService(UserManager<User> userManager, IUnitOfWork unitOfWork)
         {
             this.userManager = userManager;
             this.unitOfWork = unitOfWork;
@@ -30,7 +25,6 @@ namespace TFP.Core.Services.ControllerServices
                 LastName = model.LastName,
                 UserName = model.UserName
             };
-
             return await userManager.CreateAsync(user, model.Password);
         }
     }
