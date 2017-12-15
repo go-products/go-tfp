@@ -7,12 +7,12 @@
 [Oo]bj/
 [Ll]og/
 
-/.vs/config/applicationhost.config
-/.vs/config/applicationhost.config
-/.vs/VSWorkspaceState.json
-/.vs/slnx.sqlite
-/.vs
-/packages
-/.idea
+/TFP/.vs/config/applicationhost.config
+/TFP/.vs/config/applicationhost.config
+/TFP/.vs/VSWorkspaceState.json
+/TFP/.vs/slnx.sqlite
+/TFP/.vs
+/TFP/packages
+/TFP/.idea
 *.msi
 *.pubxml
