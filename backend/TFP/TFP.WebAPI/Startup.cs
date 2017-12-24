@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using TFP.Core.Services;
+using TFP.Core.UnitOfWork;
 using TFP.Domain.Entities;
 using TFP.Persistence.Context;
 
@@ -20,7 +23,8 @@ namespace TFP.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddIdentityCore<User>(options =>
+            services.AddDbContext<TfpContext>(options => options.UseSqlServer(@"Server=.;Database=TFP;Trusted_Connection=True;"));
+            services.AddIdentity<User, Role>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
@@ -28,8 +32,11 @@ namespace TFP.WebAPI
                 options.Password.RequiredLength = 3;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Lockout.MaxFailedAccessAttempts = 5;
-            });
-            services.AddDbContext<TfpContext>(options => options.UseSqlServer(@"Server=.;Database=TFP;Trusted_Connection=True;"));
+            })
+                .AddEntityFrameworkStores<TfpContext>()
+                .AddDefaultTokenProviders();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IAccountService, AccountService>();
             services.AddMvc();
             services.AddSwaggerGen(c =>
             {
@@ -50,6 +57,8 @@ namespace TFP.WebAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "TFP");
             });
+
+            app.UseAuthentication();
 
             app.UseMvc();
         }
