@@ -6,7 +6,7 @@ namespace TFP.Models.ViewModels.AuthorizationModel
     {
         [Required]
         [MinLength(2)]
-        public string FirsName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [MinLength(2)]
@@ -23,6 +23,6 @@ namespace TFP.Models.ViewModels.AuthorizationModel
         [Required]
         [MinLength(2)]
         [MaxLength(50)]
-        public string UserName { get; set; }
+        public string Email { get; set; }
     }
 }

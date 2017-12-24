@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using TFP.Core.UnitOfWork;
@@ -20,14 +23,7 @@ namespace TFP.Core.Services
 
         public async Task<IdentityResult> Register(RegisterModel model)
         {
-            var user = new User
-            {
-                Id = Guid.NewGuid(),
-                FirstName = model.FirsName,
-                LastName = model.LastName,
-                UserName = model.UserName
-            };
-            return await userManager.CreateAsync(user, model.Password);
+            return null;
         }
     }
 }
