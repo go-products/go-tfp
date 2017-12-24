@@ -11,9 +11,10 @@ using TFP.Persistence.Context;
 namespace TFP.Persistence.Migrations
 {
     [DbContext(typeof(TfpContext))]
-    partial class TfpContextModelSnapshot : ModelSnapshot
+    [Migration("20171224101008_Individual_RemovedUnusedFields")]
+    partial class Individual_RemovedUnusedFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

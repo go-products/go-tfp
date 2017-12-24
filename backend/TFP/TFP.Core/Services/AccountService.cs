@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using TFP.Core.UnitOfWork;
 using TFP.Domain.Entities;
@@ -21,6 +22,7 @@ namespace TFP.Core.Services
         {
             var user = new User
             {
+                Id = Guid.NewGuid(),
                 FirstName = model.FirsName,
                 LastName = model.LastName,
                 UserName = model.UserName

@@ -213,18 +213,6 @@ namespace TFP.Persistence.Context
 
                 entity.Property(e => e.Description).HasMaxLength(512);
 
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(128);
-
-                entity.Property(e => e.FirstName)
-                    .IsRequired()
-                    .HasMaxLength(128);
-
-                entity.Property(e => e.LastName)
-                    .IsRequired()
-                    .HasMaxLength(128);
-
                 entity.Property(e => e.Phone)
                     .IsRequired()
                     .HasMaxLength(12);
@@ -673,24 +661,9 @@ namespace TFP.Persistence.Context
 
                 entity.Property(e => e.Comment).HasMaxLength(512);
 
-                entity.Property(e => e.Login)
-                    .IsRequired()
-                    .HasMaxLength(128);
-
                 entity.Property(e => e.PasswordHash)
                     .IsRequired()
                     .HasMaxLength(128);
-
-                entity.HasOne(d => d.IdNavigation)
-                    .WithOne(p => p.User)
-                    .HasForeignKey<User>(d => d.Id)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Membership_User_Membership_Individual");
-
-                entity.HasOne(d => d.InitialPermissionSet)
-                    .WithMany(p => p.User)
-                    .HasForeignKey(d => d.InitialPermissionSetId)
-                    .HasConstraintName("FK_Membership_User_Membership_PermissionSet");
             });
 
             modelBuilder.Entity<UserPermission>(entity =>

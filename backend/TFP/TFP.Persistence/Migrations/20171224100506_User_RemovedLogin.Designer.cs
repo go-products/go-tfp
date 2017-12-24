@@ -11,9 +11,10 @@ using TFP.Persistence.Context;
 namespace TFP.Persistence.Migrations
 {
     [DbContext(typeof(TfpContext))]
-    partial class TfpContextModelSnapshot : ModelSnapshot
+    [Migration("20171224100506_User_RemovedLogin")]
+    partial class User_RemovedLogin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -293,15 +294,25 @@ namespace TFP.Persistence.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(512);
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(128);
+
                     b.Property<bool>("Gender");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(128);
 
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasMaxLength(12);
 
                     b.Property<byte[]>("Photo");
-
-                    b.Property<Guid?>("UserId");
 
                     b.HasKey("Id");
 
@@ -311,10 +322,6 @@ namespace TFP.Persistence.Migrations
 
                     b.HasIndex("Id")
                         .HasName("IX_Membership_Social_IndividualId");
-
-                    b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
 
                     b.ToTable("Individual","Membership");
                 });
@@ -953,10 +960,6 @@ namespace TFP.Persistence.Migrations
                         .WithMany("Individual")
                         .HasForeignKey("CityId")
                         .HasConstraintName("FK_Membership_Individual_Lookup_City");
-
-                    b.HasOne("TFP.Domain.Entities.User", "User")
-                        .WithOne("IdNavigation")
-                        .HasForeignKey("TFP.Domain.Entities.Individual", "UserId");
                 });
 
             modelBuilder.Entity("TFP.Domain.Entities.Message", b =>
@@ -1132,9 +1135,15 @@ namespace TFP.Persistence.Migrations
 
             modelBuilder.Entity("TFP.Domain.Entities.User", b =>
                 {
+                    b.HasOne("TFP.Domain.Entities.Individual", "IdNavigation")
+                        .WithOne("User")
+                        .HasForeignKey("TFP.Domain.Entities.User", "Id")
+                        .HasConstraintName("FK_Membership_User_Membership_Individual");
+
                     b.HasOne("TFP.Domain.Entities.PermissionSet", "InitialPermissionSet")
                         .WithMany("User")
-                        .HasForeignKey("InitialPermissionSetId");
+                        .HasForeignKey("InitialPermissionSetId")
+                        .HasConstraintName("FK_Membership_User_Membership_PermissionSet");
                 });
 
             modelBuilder.Entity("TFP.Domain.Entities.UserPermission", b =>

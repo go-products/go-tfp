@@ -13,7 +13,6 @@ namespace TFP.Domain.Entities
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Login { get; set; }
         public int? InitialPermissionSetId { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreatedOn { get; set; }
