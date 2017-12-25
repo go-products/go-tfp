@@ -1,6 +1,6 @@
 # Go TFP Project
 
- ~ description ~
+~ description ~
 
 ## Getting Started
 
@@ -23,11 +23,17 @@ yarn start
 Frontend
 
 ```
-yarn run client
+yarn client
 ```
 
 Backend
 
 ```
-yarn run server
+yarn server
 ```
+
+### Ports
+
+#### Client: [localhost:3000](https://localhost:3000/)
+
+#### Server: [localhost:49174/swagger/#/](http://localhost:49174/swagger/#/)
