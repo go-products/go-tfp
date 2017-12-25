@@ -1,7 +1,14 @@
-interface Props {}
+import { UserStore } from 'core/user'
 
+interface Props {
+  user?: UserStore
+}
+
+@observer(['user'])
 export class Header extends Component<Props, {}> {
   render() {
+    if (!this.props.user) return null
+
     return (
       <header className="header">
         <Link to="/" className="header__logo">
@@ -21,7 +28,9 @@ export class Header extends Component<Props, {}> {
           </li>
         </nav>
 
-        <div className="header__account">account</div>
+        <div className="header__account">
+          {this.props.user.isAuth ? 'was logged' : 'wasnt logged'}
+        </div>
       </header>
     )
   }

@@ -4,7 +4,6 @@ import { IRegistrationFields } from './fields'
 import { RegistrationForm } from './form'
 
 interface Props {
-  path?: string
   user?: UserStore
 }
 
@@ -23,7 +22,7 @@ export class Registration extends Component<Props, {}> {
   componentWillMount() {
     this.fields = {
       firstName: new Field(),
-      secondName: new Field(),
+      lastName: new Field(),
       email: new Field(),
       confirmPassword: new Field(),
       password: new Field(),
@@ -38,7 +37,7 @@ export class Registration extends Component<Props, {}> {
   }
 
   render() {
-    const { firstName, secondName, email, password, confirmPassword } = this.fields
+    const { firstName, lastName, email, password, confirmPassword } = this.fields
 
     return (
       <div className="block">
@@ -46,7 +45,7 @@ export class Registration extends Component<Props, {}> {
           <form className="reg__form" onSubmit={this.handleSubmit}>
             {this.error}
             <Input label="Имя" field={firstName} />
-            <Input label="Фамилия" field={secondName} />
+            <Input label="Фамилия" field={lastName} />
             <Input label="Пароль" type="password" field={password} />
             <Input label="Повторите пороль" type="password" field={confirmPassword} />
             <Input label="Email" type="email" field={email} />
