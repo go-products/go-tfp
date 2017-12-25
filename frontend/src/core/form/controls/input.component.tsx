@@ -1,4 +1,4 @@
-import { Field } from './field.model'
+import { Field } from '../field.model'
 
 interface Props {
   field: Field
@@ -14,14 +14,7 @@ export class Input extends Component<Props, {}> {
     return (
       <div className="field">
         <label>{label}</label>
-        <input
-          type={type || 'text'}
-          value={field.value}
-          onChange={(event: any) => {
-            event.preventDefault()
-            field.value = event.currentTarget.value
-          }}
-        />
+        <input type={type || 'text'} value={field.value} onChange={e => field.onChange(e)} />
       </div>
     )
   }

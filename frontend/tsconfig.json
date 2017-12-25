@@ -1,20 +1,32 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
+    "target": "es5",
     "moduleResolution": "node",
     "jsx": "react",
     "declaration": false,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
     "noImplicitAny": true,
-    "importHelpers": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictNullChecks": true,
     "sourceMap": true,
     "inlineSourceMap": false,
     "inlineSources": false,
     "pretty": true,
-    "experimentalDecorators": true,
-    "baseUrl": "./src"
+    "removeComments": false,
+    "baseUrl": "./src",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2015",
+      "es2016",
+      "es2017.object",
+      "scripthost"
+    ]
   },
   "include": [
     "typings/*",
