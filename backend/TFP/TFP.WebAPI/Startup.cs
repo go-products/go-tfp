@@ -28,7 +28,7 @@ namespace TFP.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TfpContext>(options => options.UseSqlServer(@"Server=.;Database=TFP;Trusted_Connection=True;"));
+            services.AddDbContext<TfpContext>(options => options.UseSqlServer(Configuration["ConnectionString"]));
             services.AddIdentity<User, Role>(options =>
             {
                 options.Password.RequireDigit = false;
