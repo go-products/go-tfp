@@ -1,2 +1,3 @@
 export { Registration } from './registration.component'
-export { IRegistration } from './registration'
+export { RegistrationForm } from './form'
+export { IRegistrationFields } from './fields'

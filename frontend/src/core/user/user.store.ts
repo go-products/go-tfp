@@ -1,7 +1,7 @@
-import { http } from 'core/http'
+// import { http } from 'core/http'
 
-import { IRegistration } from 'components/registration'
+// import { IRegistrationFields } from 'components/registration'
 
-const server = 'http://localhost:8080/api/'
+// const server = 'http://localhost:8080/api/'
 
 export class UserStore {}
