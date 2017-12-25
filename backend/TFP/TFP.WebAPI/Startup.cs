@@ -89,7 +89,7 @@ namespace TFP.WebAPI
             });
 
             app.UseAuthentication();
-            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             app.UseMvc();
         }
     }
