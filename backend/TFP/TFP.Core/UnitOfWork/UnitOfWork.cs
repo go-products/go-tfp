@@ -27,7 +27,7 @@ namespace TFP.Core.UnitOfWork
         private IGenericRepository<Social> _socialRepository;
         private IGenericRepository<Stylist> _stylistRepository;
         private IGenericRepository<StylistSpecialization> _stylistSpecializationRepository;
-        private IGenericRepository<TfpEvent> _tfpEventRepository;
+        private ITfpEventRepository _tfpEventRepository;
         private IGenericRepository<TfpEventPhoto> _tfpEventPhotoRepository;
 
 
@@ -76,8 +76,8 @@ namespace TFP.Core.UnitOfWork
         public IGenericRepository<StylistSpecialization> StylistSpecializationRepository =>
         _stylistSpecializationRepository ?? (_stylistSpecializationRepository = new GenericRepository<StylistSpecialization>(_context));
 
-        public IGenericRepository<TfpEvent> TfpEventRepository =>
-        _tfpEventRepository ?? (_tfpEventRepository = new GenericRepository<TfpEvent>(_context));
+        public ITfpEventRepository TfpEventRepository =>
+        _tfpEventRepository ?? (_tfpEventRepository = new TfpEventRepository(_context));
 
         public IGenericRepository<TfpEventPhoto> TfpEventPhotoRepository =>
         _tfpEventPhotoRepository ?? (_tfpEventPhotoRepository = new GenericRepository<TfpEventPhoto>(_context));

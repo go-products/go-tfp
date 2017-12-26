@@ -9,9 +9,9 @@ namespace TFP.Core.UnitOfWork
    public interface IUnitOfWork : IDisposable
     {
         IGenericRepository<Album> AlbumRepository { get; }
-         IGenericRepository<Comment> CommentRepository { get; }
-         IGenericRepository<Individual> IndividualStatusRepository { get; }
-         IGenericRepository<Message> MessageRepository { get; }
+        IGenericRepository<Comment> CommentRepository { get; }
+        IGenericRepository<Individual> IndividualStatusRepository { get; }
+        IGenericRepository<Message> MessageRepository { get; }
         IGenericRepository<Model> ModelRepository { get; }
         IGenericRepository<Permission> PermissionTypeRepository { get; }
         IGenericRepository<Photo> PhotoRepository { get; }
@@ -21,7 +21,7 @@ namespace TFP.Core.UnitOfWork
         IGenericRepository<Social> SocialRepository { get; }
         IGenericRepository<Stylist> StylistRepository { get; }
         IGenericRepository<StylistSpecialization> StylistSpecializationRepository { get; }
-        IGenericRepository<TfpEvent> TfpEventRepository { get; }
+        ITfpEventRepository TfpEventRepository { get; }
         IGenericRepository<TfpEventPhoto> TfpEventPhotoRepository { get; }
 
         void Save();

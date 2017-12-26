@@ -14,6 +14,9 @@ using TFP.Core.Services;
 using TFP.Core.UnitOfWork;
 using TFP.Domain.Entities;
 using TFP.Persistence.Context;
+using TFP.Core.Inrerfaces;
+using AutoMapper;
+using TFP.WebAPI.StartupExtensions;
 
 namespace TFP.WebAPI
 {
@@ -41,9 +44,11 @@ namespace TFP.WebAPI
                 .AddEntityFrameworkStores<TfpContext>()
                 .AddDefaultTokenProviders();
 
+            services.ConfigureAutoMapper();
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAccountService, AccountService>();
-
+            services.AddScoped<ITfpEventService, TfpEventService>();
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             services
                 .AddAuthentication(options =>
