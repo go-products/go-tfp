@@ -36,17 +36,29 @@ input {
         border-color: @color_text_dark;
         .box-shadow;
     }
+    &.error {
+        border-color: @color_error;
+    }
 }
 
 .field {
     display: flex;
     margin-bottom: 15px;
     align-items: center;
+    position: relative;
     label {
         width: 120px;
         margin-right: 15px;
         text-align: right;
         display: block;
+    }
+    .field__error_msg {
+        position: absolute;
+        bottom: -13px;
+        font-size: 11px;
+        left: 135px;
+        line-height: 12px;
+        color: @color_error;
     }
 }
 
@@ -129,7 +141,7 @@ input {
 // Header styles
 
 .header {
-    background-color: @color_main;
+    background: @gradient_main;
     color: @color_text_light;
     display: flex;
     padding: 0 15px;

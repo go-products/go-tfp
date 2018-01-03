@@ -6,7 +6,6 @@ export class RegistrationForm extends Form {
     if (!this.isValid()) {
       return Promise.resolve(false)
     }
-
     const data = this.serialize()
 
     return http

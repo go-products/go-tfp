@@ -24,12 +24,13 @@ export abstract class Form {
   }
 
   isValid(): boolean {
-    for (let fieldName in this.fields) {
-      if (!this.fields[fieldName].isValid()) {
-        return false
-      }
-    }
-    return true
+    const fieldNames = Object.keys(this.fields)
+
+    fieldNames.map((fieldName: string) => {
+      this.fields[fieldName].checkValid()
+    })
+
+    return !fieldNames.find((fieldName: string) => !!this.fields[fieldName].isValid === false)
   }
 
   submit(): void {}
