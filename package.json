@@ -8,8 +8,7 @@
   "license": "MIT",
   "scripts": {
     "install": "cd frontend && yarn install",
-    "start":
-      "parallelshell \"cd backend/TFP && dotnet build && cd TFP.WebAPI && dotnet run\" \"cd frontend && yarn start\"",
+    "start": "parallelshell \"yarn server\" \"yarn client\"",
     "client": "cd frontend && yarn start",
     "server":
       "cd backend/TFP && dotnet restore && cd TFP.WebAPI && dotnet ef database update && dotnet run"
